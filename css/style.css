@@ -1,0 +1,44 @@
+.scrollTop {
+    position: fixed;
+    right: 5%;
+    bottom: 10px;
+    background-color: #BE3F48;
+    padding: 15px;
+    opacity: 0;
+    transition: all 0.4s ease-in-out 0s;
+    color: white;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 21;
+}
+
+.scrollTop a {
+    color: #fff;
+}
+
+.scrollTop:hover {
+    background-color: blue;
+}
+
+@media (max-width: 768px) {
+    .navbar-collapse {
+        position: fixed;
+        left: 100%;
+        padding: 30px 15px 15px 30px;
+        height: 100%;
+        width: 70%;
+        transition: all 0.5s ease;
+        display: block;
+        z-index: 20;
+        bottom: 0;
+    }
+    .navbar-collapse.collapsing {
+        height: 100%;
+        margin-right: 50%;
+        transition: all 0.1s ease;
+        display: block;
+    }
+    .navbar-collapse.show {
+        left: 30%;
+    }
+}
