@@ -78,7 +78,7 @@ function Menu2(miniObj) {
     y = '<ul class="dropdown-menu">';
     for (j in miniObj.items) {
         if (!jQuery.isEmptyObject(miniObj.items[j].items)) {
-            y += '<li class="dropdown-submenu"><a class="dropdown-item" href="' + miniObj.items[j].href + '">' + miniObj.items[j].text + '</a>' + Menu2(miniObj.items[j]) + '</li>';
+            y += '<li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="' + miniObj.items[j].href + '">' + miniObj.items[j].text + '</a>' + Menu2(miniObj.items[j]) + '</li>';
 
         } else {
             y += '<li><a class="dropdown-item" href="' + miniObj.items[j].href + '">' + miniObj.items[j].text + '</a></li>';

@@ -46,60 +46,6 @@
                     Menu1();
                 </script>
             </ul>
-            <!-- <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Categories
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" href="#">Mobile</a>
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="#">Apple</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Samsung</a>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Oppo</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">Tablet</a>
-                        </li>
-                        <li class="dropdown-submenu">
-                            <a class="dropdown-item" href="#">Laptop</a>
-                            <ul class="dropdown-menu">
-                                <li class="dropdown-submenu">
-                                    <a class="dropdown-item" href="#">13 inc</a>
-                                    <ul class="dropdown-menu">
-                                        <li>
-                                            <a class="dropdown-item" href="#">Apple</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">Samsung</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-item" href="#">Assus</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">15 inc</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
-                </li>
-            </ul> -->
         </div>
     </nav>
 
@@ -194,6 +140,24 @@
     $('.carousel').carousel({
         interval: 500
     })
+</script>
+
+<script>
+    $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
+        if (!$(this).next().hasClass('show')) {
+            $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+        }
+        var $subMenu = $(this).next('.dropdown-menu');
+        $subMenu.toggleClass('show');
+
+
+        $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+            $('.dropdown-submenu .show').removeClass('show');
+        });
+
+
+        return false;
+    });
 </script>
 
 </html>
